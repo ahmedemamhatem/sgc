@@ -8,6 +8,19 @@ app_license = "mit"
 # Apps
 # ------------------
 
+doc_events = {
+    "Sales Order": {
+        "before_validate": "sgc.my_customizations.set_qty_in_sales_order"
+    },
+    "Delivery Note": {
+        "before_validate": "sgc.my_customizations.copy_custom_fields_from_reference"
+    },
+    "Sales Invoice": {
+        "before_validate": "sgc.my_customizations.copy_custom_fields_from_reference"
+    }
+}
+
+
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
