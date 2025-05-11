@@ -7,18 +7,25 @@ app_license = "mit"
 
 # Apps
 # ------------------
-
 doc_events = {
     "Sales Order": {
-        "before_validate": "sgc.my_customizations.set_qty_in_sales_order"
-    },
-    "Delivery Note": {
-        "before_validate": "sgc.my_customizations.copy_custom_fields_from_reference"
+        "before_validate": [
+            "sgc.my_customizations.set_qty_in_sales_order"
+        ]
     },
     "Sales Invoice": {
-        "before_validate": "sgc.my_customizations.copy_custom_fields_from_reference"
+        "before_validate": [
+            "sgc.my_customizations.set_qty_in_sales_invoice",
+            "sgc.my_customizations.copy_custom_fields_from_reference"
+        ]
+    },
+    "Delivery Note": {
+        "before_validate": [
+            "sgc.my_customizations.copy_custom_fields_from_reference"
+        ]
     }
 }
+
 
 
 # required_apps = []
